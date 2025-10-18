@@ -1,9 +1,9 @@
-[![Open in MATLAB Online](https://www.mathworks.com/images/responsive/global/open-in-matlab-online.svg)](https://matlab.mathworks.com/open/github/v1?repo=anettevidal/Practica1MSF)
+[![Open in MATLAB Online](https://www.mathworks.com/images/responsive/global/open-in-matlab-online.svg)](https://matlab.mathworks.com/open/github/v1?repo=anettevidal/Practica-4-MSF)
 
-# Práctica 1: Diseño de controladores
+# Práctica: Sistema cardiovascular
 
 ## Información de la estudiante
-Anette Mariana Vidal Ortiz \[22212389]; l22212389@tectijuana.edu.mx
+Anette Mariana Vidal Ortiz \[22212389]; L22212389@tectijuana.edu.mx
 
 Modelado de Sistemas Fisiológicos
 
@@ -22,28 +22,30 @@ La asignatura de Modelado de Sistemas Fisiológicos forma parte del plan de estu
 
 ## Objetivos
 
-1. Calcular la función de transferencia.
-2. Determinar el modelo de ecuaciones integro-diferenciales.
-3. Analizar la estabilidad del sistema
-4. Determinar el error en estado estacionario.
-5. Emular la respuesta del circuito RLC en Simulink/Simscape al escalón, impulso, rampa y función sinusoidal.
-6. Sintonizar las ganancias de un controlador PID en Simulink/MATLAB para eliminar el error entre la entrada y la salida del sistema.
-7. Simular la respuesta del sistema en lazo abierto y lazo cerrado en Simulink/MATLAB al escalón, impulso, rampa y función sinusoidal.
-8. Obtener la respuesta en lazo abierto y en lazo cerrado con el controlador PID en Spyder/Python con la función de transferencia.
+\1. Calcular la función de transferencia.
+\2. Determinar el modelo de ecuaciones integro-diferenciales.
+\3. Calcular el error en estado estacionario y la estabilidad en lazo abierto.
+\4. Emular y simular la respuesta del circuito en Simulink/Simscape a la señal "Uniform Random Number" con la siguiente configuración: min = -0.2 V; max = 1 V; seed = 106; Sample time = 0.5.
+\5. Sintonizar las ganancias de un controlador PID para eliminar el error entre la entrada y la salida del sistema normotenso-hipotenso y normotenso-hipertenso.
+\6. Obtener la respuesta en lazo abierto y en lazo cerrado con el controlador PID en Spyder/Python con la función de transferencia.
 
 ## Descripción detallada del sistema
 
-En esta práctica se presenta un circuito RLC de segundo orden, el sistema es estable con una respuesta sobreamortiguada, un error en estado estacionario de 0.5 V y un transitorio que depende directamente de los valores elegidos para el conjunto de resistencias R y la capacitancia del capacitor C de la segunda malla.  
+El modelo de Windkessel de cuatro elementos contiene dos elementos dinámicos. Por lo tanto, se necesitan dos estados para describir la dinámica. El vector de estados se conforma por las variables FL(t) denotando el flujo a través de la inercia arterial total, y la variable Pp(t) representando la presión sobre la distensibilidad arterial. Entonces, asumiendo Pa(t) como la presión arterial de entrada, y en consecuencia a Fa(t) como el flujo hacia la aorta o arteria pulmonar. Los parámetros son Z, C, R y L, que representan respectivamente la impedancia característica del lecho vascular pulmonar (aorta y arteria pulmonar), la distensibilidad aérea total, la resistencia periférica y la inertancia arterial. Este modelo tiene muchas ventajas importantes, por ejemplo:
 
-Palabras clave: Circuito RLC; Controlador I; Sistema respiratorio; Modelo matemático; Simulaciones numéricas.
+\1. Su sencillez, unos pocos elementos interconectados son suficientes para reproducir la dinámica principal del sistema cardiovascular.
+
+\2. Existe una clara analogía entre los elementos eléctricos y los componentes hidráulicos implicados en el efecto Windkessel. En consecuencia, se relacionan fácilmente con el significado hemodinámico y el acoplamiento ventrículo-arterial.
+
+Palabras clave: Sistema cardiovascular, hipotenso, hormotenso, hipertenso, Modelo matemático, Circuito RLC
 
 ## Lista de archivos incluidos en el repositorio
-1. Cuaderno computacional de MATLAB [.mlx].
-2. Modelo de Simulink [.slx].
-3. Archivos de Spyder [.py].
-4. Imagen con los parámetros del controlador.
-5. Imágenes de las simulaciones [.pdf y .png].
-6. Análisis matemático: Función de transferencia, modelo de ecuaciones integro-diferenciales, estabilidad y error en estado estacionario.
+\1. Cuaderno computacional de MATLAB [.mlx].
+\2. Modelo de Simulink [.slx].
+\3. Archivos de Spyder [.py].
+\4. Imagen con los parámetros del controlador.
+\5. Imágenes de las simulaciones [.pdf y .png].
+\6. Evidencia del análisis matemático: función de transferencia, modelo de ecuaciones integro-diferenciales, error en estado estacionario y estabilidad en lazo abierto.
 
 ## Referencias
 \[1] P. A. Valle, Syllabus para Modelado de Sistemas Fisiológicos, Tecnológico Nacional de México / Instituto Tecnológico de Tijuana, Tijuana, B.C., México, 2025. Permalink: https://biomath.xyz/course/
@@ -51,3 +53,5 @@ Palabras clave: Circuito RLC; Controlador I; Sistema respiratorio; Modelo matem�
 \[2] M. C. Khoo, Physiological Control Systems Analysis Simulation, and Estimation, 2nd ed. Piscataway, New Jersey, USA: IEEE Press, 2018, Section 4, Page 93.
 
 \[3] N. S. Nise, Control Systems Engineering, 8th ed. Hoboken, New Jersey, USA: John Wiley & Sons, 2020.
+
+\[4] T. Kind, T. J. Faes, J. W. Lankhaar, A. Vonk-Noordegraaf & M. Verhaegen, "Estimation of three-and four-element Windkessel parameters using subspace model identification", IEEE Transactions on Biomedical Engineering, vol. 57, issue 7, pp. 1531-1538, Jul 2010. https://doi.org/10.1109/TBME.2010.2041351
